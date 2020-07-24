@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./bin/server.js"
+    "start": "nodemon ./bin/server.js",
+    "kill-container": ""
   },
   "keywords": [],
   "author": "",
@@ -15,7 +16,9 @@
     "express": "^4.17.1",
     "guid": "0.0.12",
     "http": "0.0.1-security",
-    "mongoose": "^5.9.24"
+    "md5": "^2.2.1",
+    "mongoose": "^5.9.24",
+    "sendgrid": "^2.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

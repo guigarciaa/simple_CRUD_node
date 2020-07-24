@@ -1,11 +1,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-
+const config = require('./config');
 const app = express();
 
 // Connecta ao banco
-mongoose.connect("mongodb://guilherme:g123456@ds012889.mlab.com:12889/ndstr", {
+mongoose.connect(config.connectionString, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
 });
