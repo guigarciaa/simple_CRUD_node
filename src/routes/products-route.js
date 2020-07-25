@@ -1,15 +1,16 @@
-'use strict';
+"use strict";
 
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const controller = require('../controllers/product-controller');
+const controller = require("../controllers/product-controller");
+const upload = require("../services/uploads-service");
 
-router.get('/', controller.get);
-router.get('/:slug', controller.getBySlug);
-router.get('/admin/:id', controller.getById);
-router.get('/tags/:tag', controller.getByTag);
-router.post('/', controller.post);
-router.put('/:id', controller.put);
-router.delete('/', controller.delete);
+router.get("/", controller.get);
+router.get("/:slug", controller.getBySlug);
+router.get("/admin/:id", controller.getById);
+router.get("/tags/:tag", controller.getByTag);
+router.post("/", upload.image.single("image"), controller.post);
+router.put("/:id", controller.put);
+router.delete("/", controller.delete);
 
 module.exports = router;

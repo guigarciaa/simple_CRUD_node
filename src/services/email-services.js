@@ -1,12 +1,14 @@
 'use strict';
-let config = require("../config");
-let sendGrid = require('sendgrid')(config.sendgridKey);
+
+const sendmail = require('sendmail')();
 
 exports.send = async (to, subject, body) => {
-    sendGrid.send({
-        to,
-        from: "hello@nodestr.io",
-        subject,
-        html: body
+    sendmail({
+        from: 'no-reply@nodestore.com',
+        to: to,
+        subject: subject,
+        html: body,
+      }, function(err) {
+        console.log(err && err.stack);
     });
-};
+}
